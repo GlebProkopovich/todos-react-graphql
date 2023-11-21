@@ -1,0 +1,10 @@
+.todos {
+  max-width: 405px;
+  background: #fff;
+  border-radius: 10px;
+
+  &-buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+}

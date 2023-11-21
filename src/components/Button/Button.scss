@@ -1,0 +1,21 @@
+.todos-button {
+  flex: 1;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: scale(110%);
+  }
+
+  &:active {
+    transform: scale(100%);
+  }
+
+  &_toggle_list {
+    font-size: 40px;
+    color: rgb(146, 86, 96);
+    padding: 20px 0;
+  }
+}
