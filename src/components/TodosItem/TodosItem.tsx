@@ -1,18 +1,20 @@
 import { FC } from 'react';
 import { ITodosItemProps } from './types/types';
+import Button from '../Button/Button';
 import './TodosItem.scss';
 
-const TodoItem: FC<ITodosItemProps> = ({ todoText }) => {
+const TodosItem: FC<ITodosItemProps> = ({ todoText }) => {
   return (
     <div className="todos-item">
       <input type="checkbox" />
-      <p>
-        {/* {todoText} */}
-        some text to do task Lorem ipsum dolor sit amet consectetur adipisicing
-        elit. Cupiditate, neque?
-      </p>
+      <p className="todos-item__text">{todoText}</p>
+      <Button
+        spanTitle="close"
+        spanClass="button__closure"
+        onClickFn={() => 'hello'}
+      />
     </div>
   );
 };
 
-export default TodoItem;
+export default TodosItem;

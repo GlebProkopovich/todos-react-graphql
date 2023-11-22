@@ -1,21 +1,82 @@
-.todos-button {
-  flex: 1;
+.button {
   background: none;
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &:hover {
-    transform: scale(110%);
+  &__span {
+    transition: all 0.1s ease;
   }
 
-  &:active {
-    transform: scale(100%);
+  &__span-toggle {
+    font-size: 36px;
   }
 
-  &_toggle_list {
+  &__closure {
+    color: rgb(146, 86, 96);
+  }
+
+  &__add {
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(255, 189, 108);
+    border-radius: 50%;
+
+    &:hover {
+      .button__span-add {
+        transform: scale(120%);
+      }
+    }
+
+    &:active {
+      .button__span-add {
+        transform: scale(100%);
+      }
+    }
+  }
+
+  &__span-add {
+    font-size: 36px;
+    color: #fff;
+  }
+
+  &__toggle-list {
+    flex: 1;
     font-size: 40px;
     color: rgb(146, 86, 96);
     padding: 20px 0;
+    border-bottom: 0.5px solid #fff;
+
+    &:first-child {
+      border-top-left-radius: 10px;
+      border-right: 0.5px solid rgb(176, 176, 176);
+    }
+
+    &:last-child {
+      border-top-right-radius: 10px;
+    }
+
+    &_inactive {
+      &:first-child {
+        border-bottom: 0.5px solid rgb(176, 176, 176);
+        background: rgb(249, 249, 249);
+
+        .button__span-toggle {
+          color: rgb(176, 176, 176);
+        }
+      }
+      &:last-child {
+        border-bottom: 0.5px solid rgb(176, 176, 176);
+        background: rgb(249, 249, 249);
+
+        .button__span-toggle {
+          color: rgb(176, 176, 176);
+        }
+      }
+    }
   }
 }

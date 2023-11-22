@@ -5,4 +5,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
+
+  #root {
+    background: linear-gradient(90deg, #faf0cd, #fab397);
+    padding: 100px 0;
+  }
 }

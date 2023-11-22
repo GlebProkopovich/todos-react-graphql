@@ -1,8 +1,8 @@
 import { FC, useState } from 'react';
 import Button from '../Button/Button';
-import TodoList from '../TodosList/TodosList';
-import './Todos.scss';
 import { ITodosListBtns } from './types/types';
+import TodosItem from '../TodosItem/TodosItem';
+import './Todos.scss';
 
 const Todos: FC = () => {
   const [todosListBtns, setTodosListBtns] = useState<ITodosListBtns>({
@@ -10,37 +10,78 @@ const Todos: FC = () => {
     isCompletedTodosOpened: false,
   });
 
-  const handleAllTodosListBtn = () => {
+  const handleAllTodosBtn = (): void => {
     setTodosListBtns({
       isAllTodosOpened: true,
       isCompletedTodosOpened: false,
     });
   };
 
-  const handleCompletedTodosListBtn = () => {
+  const handleCompletedTodosBtn = (): void => {
     setTodosListBtns({
       isAllTodosOpened: false,
       isCompletedTodosOpened: true,
     });
   };
 
-  console.log(todosListBtns);
+  const isAllTodosOpened = todosListBtns.isAllTodosOpened;
+  const isCompletedTodosOpened = todosListBtns.isCompletedTodosOpened;
 
   return (
     <div className="todos">
-      <div className="todos-buttons">
+      <div className="todos__buttons">
         <Button
+          btnClass={`button__toggle-list ${
+            isAllTodosOpened
+              ? 'button__toggle-list_active'
+              : 'button__toggle-list_inactive'
+          }`}
           spanTitle="format_list_bulleted"
-          spanClass="todos-button_toggle_list"
-          onClickFn={handleAllTodosListBtn}
+          spanClass="button__span-toggle"
+          onClickFn={handleAllTodosBtn}
         />
         <Button
-          spanTitle="event_available" // prettier-ignore
-          spanClass="todos-button_toggle_list" // prettier-ignore
-          onClickFn={handleCompletedTodosListBtn}
+          btnClass={`button__toggle-list ${
+            isCompletedTodosOpened
+              ? 'button__toggle-list_active'
+              : 'button__toggle-list_inactive'
+          }`}
+          spanTitle="event_available"
+          spanClass="button__span-toggle"
+          onClickFn={handleCompletedTodosBtn}
         />
       </div>
-      <TodoList />
+      <div className="todos__list">
+        <TodosItem todoText="buy a laptop" />
+        <TodosItem todoText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae quae incidunt tempora sit officia alias voluptate! Eaque esse sed dolores." />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+        <TodosItem todoText="lorem ipsum hello warlds of warcrafts and other games" />
+      </div>
+      <p className="todos__total-count">Total count: 25</p>
+      <Button
+        btnClass="button__add"
+        spanTitle="add"
+        spanClass="button__span-add"
+        onClickFn={() => {}}
+      />
     </div>
   );
 };

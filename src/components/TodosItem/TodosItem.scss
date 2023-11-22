@@ -1,5 +1,14 @@
 .todos-item {
+  min-width: 300px;
   display: flex;
+  justify-content: space-between;
   gap: 10px;
   padding: 5px 20px;
+
+  &__text {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    color: rgb(66, 66, 66);
+  }
 }
