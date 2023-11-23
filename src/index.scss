@@ -10,4 +10,9 @@
     background: linear-gradient(90deg, #faf0cd, #fab397);
     padding: 100px 0;
   }
+
+  .modal_opened {
+    overflow-y: hidden;
+    padding-right: 15px;
+  }
 }

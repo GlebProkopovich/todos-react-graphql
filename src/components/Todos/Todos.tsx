@@ -1,10 +1,15 @@
 import { FC, useState } from 'react';
 import Button from '../Button/Button';
-import { ITodosListBtns } from './types/types';
+import { ITodosListBtns } from './types';
 import TodosItem from '../TodosItem/TodosItem';
+import { useDispatch, useSelector } from 'react-redux';
+import { toggleNewTaskModal } from '../../store/modal/modal.slice';
 import './Todos.scss';
+import { getModalState } from '../../store';
 
 const Todos: FC = () => {
+  const dispatch = useDispatch();
+
   const [todosListBtns, setTodosListBtns] = useState<ITodosListBtns>({
     isAllTodosOpened: true,
     isCompletedTodosOpened: false,
@@ -24,6 +29,10 @@ const Todos: FC = () => {
     });
   };
 
+  const handleAddBtn = (): void => {
+    dispatch(toggleNewTaskModal(true));
+  };
+
   const isAllTodosOpened = todosListBtns.isAllTodosOpened;
   const isCompletedTodosOpened = todosListBtns.isCompletedTodosOpened;
 
@@ -37,7 +46,7 @@ const Todos: FC = () => {
               : 'button__toggle-list_inactive'
           }`}
           spanTitle="format_list_bulleted"
-          spanClass="button__span-toggle"
+          spanClass="button__icon-toggle"
           onClickFn={handleAllTodosBtn}
         />
         <Button
@@ -47,7 +56,7 @@ const Todos: FC = () => {
               : 'button__toggle-list_inactive'
           }`}
           spanTitle="event_available"
-          spanClass="button__span-toggle"
+          spanClass="button__icon-toggle"
           onClickFn={handleCompletedTodosBtn}
         />
       </div>
@@ -79,8 +88,8 @@ const Todos: FC = () => {
       <Button
         btnClass="button__add"
         spanTitle="add"
-        spanClass="button__span-add"
-        onClickFn={() => {}}
+        spanClass="button__icon-add"
+        onClickFn={handleAddBtn}
       />
     </div>
   );

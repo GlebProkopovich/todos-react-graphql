@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { ITodosItemProps } from './types/types';
+import { ITodosItemProps } from './types';
 import Button from '../Button/Button';
 import './TodosItem.scss';
 

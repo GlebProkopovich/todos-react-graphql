@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { IButtonProps } from './types/types';
+import { IButtonProps } from './types';
 import './Button.scss';
 
 const Button: FC<IButtonProps> = ({
@@ -11,7 +11,7 @@ const Button: FC<IButtonProps> = ({
   return (
     <button className={`${btnClass} button`} onClick={onClickFn}>
       <span
-        className={`${spanClass} button__span icon material-symbols-outlined`}
+        className={`${spanClass} button__icon icon material-symbols-outlined`}
       >
         {spanTitle}
       </span>

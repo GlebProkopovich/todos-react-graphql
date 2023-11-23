@@ -4,16 +4,32 @@
   cursor: pointer;
   transition: all 0.3s ease;
 
-  &__span {
+  &__icon {
     transition: all 0.1s ease;
   }
 
-  &__span-toggle {
+  &__icon-toggle {
     font-size: 36px;
   }
 
   &__closure {
     color: rgb(146, 86, 96);
+  }
+
+  &__closure-modal {
+    position: absolute;
+    top: 5%;
+    left: 100%;
+    color: #fff;
+    transition: all 0.1s ease;
+
+    &:hover {
+      transform: scale(120%);
+    }
+
+    &:active {
+      transform: scale(100%);
+    }
   }
 
   &__add {
@@ -27,19 +43,24 @@
     border-radius: 50%;
 
     &:hover {
-      .button__span-add {
+      .button__icon-add {
         transform: scale(120%);
       }
     }
 
     &:active {
-      .button__span-add {
+      .button__icon-add {
         transform: scale(100%);
       }
     }
   }
 
-  &__span-add {
+  &__add-modal {
+    height: 50px;
+    width: 50px;
+  }
+
+  &__icon-add {
     font-size: 36px;
     color: #fff;
   }
