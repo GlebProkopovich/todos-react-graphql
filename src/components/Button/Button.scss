@@ -13,7 +13,14 @@
   }
 
   &__closure {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__closure-icon {
     color: rgb(146, 86, 96);
+    line-height: 16px;
   }
 
   &__closure-modal {
